@@ -10,10 +10,18 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <h1>{{ product }}</h1> <!--  imagine '{{' are two phones calling our main.js and asking to show what is inside product -->
+      <div>{{ description }}</div>
     </div>
 
-    <!-- Import Js -->
+    <!-- importing a whole vue app now -->
     <script src="./main.js"></script>
+
+    <!-- mount app-->
+    <script>
+      const mountedApp = app.mount('#app') // mounting the app with 'app.mount' 
+                                          //and putting it into variable mountedApp. 
+                                          //using the dom id selector # to grab id = "app" on line12
+    </script>
   </body>
 </html>
