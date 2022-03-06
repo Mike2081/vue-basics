@@ -11,7 +11,14 @@
   <body>
     <div id="app">
       <h1>{{ product }}</h1> <!--  imagine '{{' are two phones calling our main.js and asking to show what is inside product -->
+      <div class="product-image">
+        <img :src="image"/> <!-- v-bind is binding the 'src' attribute to the vue expression in the main.js file = "image: './assets/images/socks_blue.jpg'"  -->
+      </div>  <!--SIDE NOTE: v-bind: shortcut is ":(and w.e attribute u want) the 1 u used above is " :src "-->
+      <p v-if="inventory > 9">In Stock</p> <!--inside the main.js if data object "inStock is true" show the first <p> if not show second <p> -->
+      <p v-else-if="inventory <= 10 && inventory > 0">almost all gone!</p> <!--so whats happening on this line is "v-else-if" is allowing double conditional rendering here. If data expression inventory is less than 10 or great than 0 show "almost all gone!"-->
+        <p v-else=>Out of Stock</p> <!--SIDENOTE: 'v-show' is great if u want show sth that constantly needs to be toggled off and on, like a modal for example-->
       <div>{{ description }}</div>
+      <a :href="url" target="_blank">test yt link</a> <!--using the same vbind shortcut like above but for href: " :href ='url' "-->
     </div>
 
     <!-- importing a whole vue app now -->
